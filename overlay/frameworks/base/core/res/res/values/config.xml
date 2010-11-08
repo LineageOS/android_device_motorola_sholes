@@ -335,4 +335,7 @@
     <!-- 2 means give warning -->
     <integer name="config_datause_notification_type">2</integer>
 
+    <!-- Does camera hardware lack smooth zoom capability? -->
+    <bool name="config_no_smooth_zoom">true</bool>
+
 </resources>
