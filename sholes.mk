@@ -93,7 +93,8 @@ PRODUCT_PACKAGES += \
     libOMX.TI.Video.Decoder \
     libOMX.TI.Video.encoder \
     libVendor_ti_omx \
-    gps.sholes
+    gps.sholes \
+    sensors.sholes
 #    libcamera
 
 # we have enough storage space to hold precise GC data
