@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAB3///TI\u003d",
+        "filename": "copy-files.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 209
+      },
+      "writtenOn": "2011-01-12T11:16:08Z",
+      "side": 1,
+      "message": "Rather than creating a temporary script file, you could pipe this to sh to execute it directly.",
+      "revId": "8445d84b8ce6b19cf19142491c3352f43bfc303e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
