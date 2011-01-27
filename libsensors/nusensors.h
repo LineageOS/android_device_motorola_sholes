@@ -61,8 +61,8 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 #define LIS_DEVICE_NAME     "/dev/lis331dlh"
 
 #define EVENT_TYPE_ACCEL_X          ABS_X
-#define EVENT_TYPE_ACCEL_Y          ABS_Y
-#define EVENT_TYPE_ACCEL_Z          ABS_Z
+#define EVENT_TYPE_ACCEL_Y          ABS_Z
+#define EVENT_TYPE_ACCEL_Z          ABS_Y
 #define EVENT_TYPE_ACCEL_STATUS     ABS_WHEEL
 
 #define EVENT_TYPE_YAW              ABS_RX
@@ -81,14 +81,14 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 #define EVENT_TYPE_LIGHT2           MSC_RAW  // led sensor 2
 
 // 720 LSG = 1G
-#define LSG                         (980.0f)
+#define LSG                         (720.0f)
 
 
 // conversion of acceleration data to SI units (m/s^2)
 #define CONVERT_A                   (GRAVITY_EARTH / LSG)
-#define CONVERT_A_X                 (CONVERT_A)
+#define CONVERT_A_X                 (-CONVERT_A)
 #define CONVERT_A_Y                 (CONVERT_A)
-#define CONVERT_A_Z                 (CONVERT_A)
+#define CONVERT_A_Z                 (-CONVERT_A)
 
 // conversion of magnetic data to uT units
 #define CONVERT_M                   (1.0f/16.0f)
