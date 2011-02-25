@@ -106,16 +106,19 @@ PRODUCT_COPY_FILES += \
     device/motorola/sholes/vold.fstab:system/etc/vold.fstab\
     device/motorola/sholes/apns-conf.xml:system/etc/apns-conf.xml
 
-
-PRODUCT_COPY_FILES += \
-    device/motorola/sholes/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
+# copy all kernel modules under the "kernel" directory to system/lib/modules
+PRODUCT_COPY_FILES += $(shell \
+    find device/motorola/sholes/kernel -name '*.ko' \
+    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
+    | tr '\n' ' ')
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/motorola/sholes/kernel
+LOCAL_KERNEL := device/motorola/sholes/kernel/zImage
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+# copy kernel
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
