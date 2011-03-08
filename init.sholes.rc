@@ -77,6 +77,9 @@ on boot
 # Temp workaround for HP library cleanup
     symlink /dev/hp3a-omap /dev/hp3A-omap
 
+# Workaround for missing keychars in sholes
+    symlink /system/usr/keychars/qwerty.kcm.bin /system/usr/keychars/qtouch-touchscreen.kcm.bin
+
 # Permissions for video
     chmod 0770 /dev/hp3a-omap
     chmod 0770 /dev/hplens-omap
