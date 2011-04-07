@@ -132,6 +132,9 @@ $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
+#Add additional locales and set the en_US as default
+PRODUCT_LOCALES += ru_RU uk_UA
+PRODUCT_DEFAULT_LANGUAGE := en_US
 
 PRODUCT_NAME := generic_sholes
 PRODUCT_DEVICE := sholes
